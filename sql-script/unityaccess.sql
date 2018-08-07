@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS unityaccess;
+CREATE DATABASE IF NOT EXISTS unityaccess;
+
+DROP USER IF EXISTS 'thomas';
+GRANT SELECT, INSERT, DELETE, UPDATE, EXECUTE
+ON unityaccess.*
+TO 'thomas' IDENTIFIED BY 'wareplai';
+
+USE unityaccess;
+CREATE TABLE players
+(
+  id        INT(10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  username  VARCHAR(16) NOT NULL UNIQUE,
+  hash      VARCHAR(100) NOT NULL,
+  salt      VARCHAR(50) NOT NULL,
+  score     INT(10) UNSIGNED DEFAULT 0
+)
