@@ -1,6 +1,8 @@
 <?php
     // $con = mysqli_connect('localhost', 'root', '', 'unityaccess');
-    $con = mysqli_connect('wareplairds.cwwizcwopfuk.us-west-1.rds.amazonaws.com', 'wareplai', 'Wareplai123', 'unityaccess'); //connect to AWS RDS
+  require_once('adaptation.php');
+  $con = new mysqli(DATA_BASE_HOST, USER_NAME, USER_PASSWORD, DATA_BASE_NAME); //connect to AWS RDS
+
 
     if (mysqli_connect_errno()) {
       echo "1: Connection failed"; //error code#1 = connection fail
