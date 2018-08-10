@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class WebTest : MonoBehaviour
     // Use this for initialization
     IEnumerator Start()
     {
-        WWW request = new WWW("http://localhost/sqlconnect/webtest.php");
+        WWW request = new WWW("http://54.193.4.138/sqlconnect/webtest.php");
         yield return request;
         //Debug.Log(request.text);
         string[] webResults = request.text.Split('|');

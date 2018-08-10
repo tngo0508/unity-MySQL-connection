@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +16,7 @@ public class Registration : MonoBehaviour {
         WWWForm form = new WWWForm();
         form.AddField("name", nameField.text);
         form.AddField("password", passwordField.text);
-        WWW www = new WWW("http://localhost/sqlconnect/register.php", form);
+        WWW www = new WWW("http://54.193.4.138/sqlconnect/register.php", form);
         yield return www;
         if (www.text == "0")
         {
@@ -32,6 +32,6 @@ public class Registration : MonoBehaviour {
     public void VerifyInputs()
     {
         submitButtion.interactable = (nameField.text.Length >= 8 && passwordField.text.Length >= 8);
-    }
-
+    } 
+	
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +28,7 @@ public class Game : MonoBehaviour {
         form.AddField("name", DBManager.username);
         form.AddField("score", DBManager.score);
 
-        WWW www = new WWW("http://localhost/sqlconnect/savedata.php", form);
+        WWW www = new WWW("http://54.193.4.138/sqlconnect/savedata.php", form);
         yield return www;
         if (www.text == "0")
         {
